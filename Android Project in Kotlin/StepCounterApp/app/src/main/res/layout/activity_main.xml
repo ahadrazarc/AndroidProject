@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp"
+    android:background="#FAFAFA">
+
+    <!-- Circular Progress -->
+    <ProgressBar
+        android:id="@+id/circleProgress"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="260dp"
+        android:layout_height="260dp"
+        android:max="10000"
+        android:progress="0"
+        android:indeterminate="false"
+        android:progressDrawable="@drawable/circular_progress"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="40dp" />
+
+    <!-- Steps Text centered inside circle -->
+    <TextView
+        android:id="@+id/stepsText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Steps: 0"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#212121"
+        app:layout_constraintTop_toTopOf="@id/circleProgress"
+        app:layout_constraintBottom_toBottomOf="@id/circleProgress"
+        app:layout_constraintStart_toStartOf="@id/circleProgress"
+        app:layout_constraintEnd_toEndOf="@id/circleProgress"/>
+
+    <!-- Distance Text -->
+    <TextView
+        android:id="@+id/distanceText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Distance: 0.00 km"
+        android:textSize="18sp"
+        android:textColor="#616161"
+        android:layout_marginTop="28dp"
+        app:layout_constraintTop_toBottomOf="@id/circleProgress"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Calories Text -->
+    <TextView
+        android:id="@+id/caloriesText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calories: 0.0 kcal"
+        android:textSize="18sp"
+        android:textColor="#616161"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/distanceText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Pause Button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/pauseButton"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:text="Pause"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="12dp"
+        android:elevation="6dp"
+        app:backgroundTint="@color/pauseButtonColor"
+        app:cornerRadius="24dp"
+        app:layout_constraintTop_toBottomOf="@id/caloriesText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/resetButton"
+        app:layout_constraintHorizontal_chainStyle="spread" />
+
+    <!-- Reset Button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/resetButton"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:text="Reset"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="36dp"
+        android:layout_marginStart="12dp"
+        android:elevation="6dp"
+        app:backgroundTint="@color/resetButtonColor"
+        app:cornerRadius="24dp"
+        app:layout_constraintTop_toBottomOf="@id/caloriesText"
+        app:layout_constraintStart_toEndOf="@id/pauseButton"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
