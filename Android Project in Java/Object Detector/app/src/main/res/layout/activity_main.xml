@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".MainActivity">
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_centerHorizontal="true"
+        android:text="Object Detector"
+        android:textAlignment="center"
+        android:textSize="36sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-condensed" />
+
+    <!-- Image Preview -->
+    <ImageView
+        android:id="@+id/imageview"
+        android:layout_width="280dp"
+        android:layout_height="280dp"
+        android:layout_below="@id/title"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:scaleType="centerCrop"
+        android:background="@drawable/image_border" />
+
+    <!-- Select Image Button -->
+    <Button
+        android:id="@+id/selectbutton"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imageview"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
+        android:text="Select Image"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:backgroundTint="@color/primary_blue"
+        android:paddingVertical="12dp"
+        android:paddingHorizontal="16dp"
+        android:textAllCaps="false"
+        android:elevation="4dp" />
+
+    <!-- Capture Image Button -->
+    <Button
+        android:id="@+id/capturebutton"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/selectbutton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:text="Capture Image"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:backgroundTint="@color/primary_blue"
+        android:paddingVertical="12dp"
+        android:paddingHorizontal="16dp"
+        android:textAllCaps="false"
+        android:elevation="4dp" />
+
+    <!-- Predict Button -->
+    <Button
+        android:id="@+id/predictbutton"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/capturebutton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:text="Predict"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:backgroundTint="@color/primary_blue"
+        android:paddingVertical="12dp"
+        android:paddingHorizontal="16dp"
+        android:textAllCaps="false"
+        android:elevation="4dp" />
+
+    <!-- Prediction Result -->
+    <TextView
+        android:id="@+id/result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/predictbutton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
+        android:text="Prediction: None"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-medium"
+        android:padding="16dp"
+        android:background="@drawable/result_background"
+        android:elevation="4dp"
+        android:gravity="center" />
+</RelativeLayout>
